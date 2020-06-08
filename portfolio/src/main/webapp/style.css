@@ -1,9 +1,65 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+div#header {
+    align-content: flex-start;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: monospace;
+    font-size: -webkit-xxx-large;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    color: grey;
+}
+
+.intro {
+    text-align: -webkit-center;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 #greeting-container {
   margin-top: 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    flex: 32%;
+    max-width: 33%;
+    padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
 }
