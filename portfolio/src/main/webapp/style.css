@@ -11,6 +11,7 @@ html, body {
 body {
     background-color: black;
     color: grey;
+    font-family: 'Inconsolata', monospace;
 }
 
 div.header {
