@@ -1,10 +1,7 @@
-div#header {
-    align-content: flex-start;
-    display: flex;
-    justify-content: space-evenly;
-    font-family: monospace;
-    font-size: -webkit-xxx-large;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&display=swap');
+
+
+/* html + body */
 
 html, body {
     margin: 0;
@@ -16,6 +13,16 @@ body {
     color: grey;
 }
 
+div.header {
+    align-content: flex-start;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: monospace;
+    font-size: -webkit-xxx-large;
+}
+
+
+
 .intro {
     text-align: -webkit-center;
 }
@@ -25,9 +32,11 @@ a {
     text-decoration: none;
 }
 
-#greeting-container {
+.quote-container {
   margin-top: 20px;
 }
+
+/* Responsive Picture Layout */
 
 .row {
   display: flex;
