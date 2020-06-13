@@ -3,26 +3,46 @@
 
 /* html + body */
 
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 html, body {
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: black;
+    background-color: #252525;
     color: grey;
     font-family: 'Inconsolata', monospace;
 }
 
-div.header {
-    align-content: flex-start;
-    display: flex;
-    justify-content: space-evenly;
-    font-family: monospace;
-    font-size: -webkit-xxx-large;
+i img {
+    width: 50px;
+    height: 50px;
+    line-height: 1;
+    padding: 10px;
 }
 
+.nav_container{
+  text-align:center;
+}
 
+span.emoji {
+  font-size: 40px;
+  line-height: 1.5;
+}
+
+li {
+    list-style-type: none;
+    display: inline-block
+}
 
 .intro {
     text-align: -webkit-center;
@@ -33,7 +53,7 @@ a {
     text-decoration: none;
 }
 
-.quote-container {
+.fact-container {
   margin-top: 20px;
 }
 

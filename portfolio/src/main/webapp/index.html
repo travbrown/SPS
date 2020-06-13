@@ -2,25 +2,104 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>xprsn</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+	<title>xprsn</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" type="image/png" href="/images/favicons/favicon.png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script src="script.js"></script>
   </head>
   <body>
     <div>
-        <div class="header"> 
-            <div>xprsn</div>
+        <div class="nav"> 
+            <ul class="nav_container">
+                <li>
+                    <p><span class="emoji">💻</span></p>
+                </li>
+                <li>
+                    <p><span class="emoji">📸</span></p>
+                </li>
+                <li>
+                    <p><span class="emoji">🎥</span></p>
+                </li>           
+            </ul>
         </div>
+        
         <hr>
+
         <div class="intro">
-            <h1 class="tagline">Adventurer. Artist. Philosopher</h1>
+            <h1 class="tagline">Adventurer. Creator. Philosopher</h1>
+
+            <p>Hi, I'm Travis.
+                Computer Science Major at Howard University from Portmore, Jamaica. 
+                I love adventure, sports, all forms of art, philosophy, psychology etc. 
+                I'm a curious, weird and open person. 
+                      
+            </p>
+            <p>Click below to get random fun facts about me:</p>
+            <button onclick="addRandomFact()">I love my life</button>
+            <div id="fact-container"></div>
+
+            <div class="row">
+                <div class="column">
+                    <img src="/images/portfolio/sunset.jpg">
+                    <img src="/images/portfolio/alaji.jpg">
+                    <img src="/images/portfolio/ari.jpg">
+                    <img src="/images/portfolio/back-back_ashcrys.jpg">
+                    <img src="/images/portfolio/Brit-1.jpg">
+                    <img src="/images/portfolio/Brit-2.jpg">                    
+                </div>
+                <div class="column">
+                    <img src="/images/portfolio/central_light.jpg">
+                    <img src="/images/portfolio/broken_step_light.jpg">
+                    <img src="/images/portfolio/church_cape_coast.jpg">
+                    <img src="/images/portfolio/malik.jpg">
+                    <img src="/images/portfolio/peniel.jpg">
+                    <img src="/images/portfolio/peniel_2.jpg">
+                    <img src="/images/portfolio/ring.jpg">
+                </div>
+                <div class="column">
+                    <img src="/images/portfolio/closeUp_ashcrys.jpg">
+                    <img src="/images/portfolio/tall_sunset.jpg">
+                    <img src="/images/portfolio/taurus.jpg">
+                    <img src="/images/portfolio/youtube.jpg">
+                    <img src="/images/portfolio/moon.jpg">
+                    <img src="/images/portfolio/waves.jpg">
+                    <img src="/images/portfolio/reflective_girl.jpg">
+                    <img src="/images/portfolio/Brit-3.jpg">
+                </div>
+            </div>
+
+            <iframe width="800" height="600" 
+            src="https://www.youtube.com/embed/V6IfQHg52BM"></iframe>
+
             
-            <p>Click here to get a random nugget of inspiration:</p>
-            <button onclick="addRandomQuote()">I'll have a word sandwich filled with wisdom please</button>
-            <div class="quote-container"></div>
         </div>
 
-        
+        <footer class="nav_container">
+            <ul>
+                <li><i>
+                    <a href="https://www.linkedin.com/in/xprsn">
+                        <img src="/images/icons/linkedin.png">
+                    </a>
+                    </i>
+                </li>
+                <li>
+                    <i>
+                    <a href="https://github.com/travbrown">
+                        <img src="/images/icons/github.png">
+                    </a>
+                    </i>
+                </li>
+                <li>
+                    <i>
+                    <a href="/images/resume.pdf">
+                        <img src="/images/icons/resume.png">
+                    </a>
+                    </i>
+                </li>            
+            </ul>
+        </footer>
         
     </div>
     <!-- 
@@ -44,5 +123,7 @@
         - Reggae for joy and gratitude
         - Drake like music that puts you in a somber mood
     -->
-  </body>
+  
+
+    </body>
 </html>
