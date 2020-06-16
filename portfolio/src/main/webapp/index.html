@@ -27,18 +27,25 @@
         
         <hr>
 
-        <div class="intro">
+        <div class="content-container">
             <h1 class="tagline">Adventurer. Creator. Philosopher</h1>
-
-            <p>Hi, I'm Travis.
+            
+            <p>Click below to be greeted in different ways:</p>
+            <button onclick="getRandomQuoteUsingAsyncAwait()">Greetings</button>
+            <div id="quote-container"></div>
+            
+            <p class="intro">
+                Hi, I'm Travis.
                 Computer Science Major at Howard University from Portmore, Jamaica. 
                 I love adventure, sports, all forms of art, philosophy, psychology etc. 
-                I'm a curious, weird and open person. 
-                      
+                I'm a curious, weird and open person.      
             </p>
+
             <p>Click below to get random fun facts about me:</p>
             <button onclick="addRandomFact()">I love my life</button>
             <div id="fact-container"></div>
+
+
 
             <div class="row">
                 <div class="column">
@@ -57,6 +64,7 @@
                     <img src="/images/portfolio/peniel.jpg">
                     <img src="/images/portfolio/peniel_2.jpg">
                     <img src="/images/portfolio/ring.jpg">
+                    <img src="/images/portfolio/dockweiler.jpeg">
                 </div>
                 <div class="column">
                     <img src="/images/portfolio/closeUp_ashcrys.jpg">
@@ -73,7 +81,6 @@
             <iframe width="800" height="600" 
             src="https://www.youtube.com/embed/V6IfQHg52BM"></iframe>
 
-            
         </div>
 
         <footer class="nav_container">

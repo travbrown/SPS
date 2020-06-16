@@ -17,10 +17,10 @@
  */
 function addRandomFact() {
     
-
   const facts = [
     'I taught myself surfing, skateboard, photography.',
-    'I just wanna travel the world',
+    'I sat in a river and made a toe brush out of some twigs, seamoss and leaf stalks',
+    'I tried to make a raft out random pieces of wood.',
     'I want a husky dog when I get older.',
     'I want to be financially free and travel the world.',
     'I snorkelled under a huge bat cave that was located on an islet near an island that was off the coast of West Africa.',
@@ -43,4 +43,10 @@ function addRandomFact() {
   // Add it to the page.
   const factContainer = document.getElementById('fact-container');
   factContainer.innerText = fact;
+}
+
+async function getRandomQuoteUsingAsyncAwait() {
+  const response = await fetch('/greeting');
+  const quote = await response.text();
+  document.getElementById('quote-container').innerText = quote;
 }
