@@ -45,8 +45,29 @@ function addRandomFact() {
   factContainer.innerText = fact;
 }
 
-async function getRandomQuoteUsingAsyncAwait() {
-  const response = await fetch('/greeting');
-  const quote = await response.text();
-  document.getElementById('quote-container').innerText = quote;
+// async function getRandomQuoteUsingAsyncAwait() {
+//   const response = await fetch('/data');
+//   const quote = await response.text();
+//   document.getElementById('quote-container').innerText = quote;
+// }
+
+function getCommentStats(){
+    fetch("/data").then(response => response.json()).then((comments) => {
+    
+    const statsListElement = document.getElementById('comment-container');
+    statsListElement.innerHTML = '';
+    statsListElement.appendChild(
+        createListElement('AJ: ' + comments.comment1));
+    statsListElement.appendChild(
+        createListElement('Kyle: ' + comments.comment2));
+    statsListElement.appendChild(
+        createListElement('Jorge: ' + comments.comment3));
+    })
+}
+
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
 }

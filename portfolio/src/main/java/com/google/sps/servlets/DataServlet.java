@@ -14,7 +14,9 @@
 
 package com.google.sps.servlets;
 
+import com.google.gson.Gson;
 import java.io.IOException;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.annotation.WebServlet;
@@ -23,30 +25,56 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /** Servlet that returns a random greeting. TODO: modify this file to handle comments data */
-@WebServlet("/greeting")
+@WebServlet("/data")
 public final class DataServlet extends HttpServlet {
-    private List<String> greetings;
-
+    //private ArrayList<String> comments = new ArrayList<String>();
+    
+    private ArrayList<String> arr;
     @Override
     public void init(){
-        greetings = new ArrayList<>();
-        greetings.add("Hello");
-        greetings.add("Weh yah seh mi general?");
-        greetings.add("Hey");
-        greetings.add("Wah Gwan mi G?");
-        greetings.add("Shalom");
-        greetings.add("Hola");
-        greetings.add("Mawning big boss");
-        greetings.add("Yah dealid brogad?");
-        System.out.println(greetings);
+        arr = new ArrayList<>();
+        arr.add("Nice Picss");
+        arr.add("Love the fun facts");
+        arr.add("Woo Go Travis!");
+        
     }
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String greeting = greetings.get((int) (Math.random() * greetings.size()));
-
-        response.setContentType("text/html;");
-        response.getWriter().println(greeting);
+        
+        // Convert the server stats to JSON
+        //ServerStats commentStats = new CommentStats();
+        String json = convertToJson(arr);
+        response.setContentType("application/json;");
+        System.out.println(json);
+        response.getWriter().println(json);
     }
+
+    /**
+    * Converts a ServerStats instance into a JSON string using manual String concatentation.
+    */
+    private String convertToJson(ArrayList<String> arr) {
+        String json = "{";
+        json += "\"comment1\": ";
+        json += "\"" + arr.get(0) + "\"";
+        json += ", ";
+        json += "\"comment2\": ";
+        json += "\"" + arr.get(1) + "\"" + ", ";
+        json += "\"comment3\": ";
+        json += "\"" + arr.get(2) + "\"";
+        json += "}";
+        return json;
+    }
+
+
+    /**
+    * Converts a ServerStats instance into a JSON string using the Gson library. Note: We first added
+    * the Gson library dependency to pom.xml.
+    */
+    // private String convertToJsonUsingGson(CommentStats commentStats) {
+    //     Gson gson = new Gson();
+    //     String json = gson.toJson(commentStats);
+    //     return json;
+    // }
 }
 
