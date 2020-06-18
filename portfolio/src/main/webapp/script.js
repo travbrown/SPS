@@ -52,17 +52,13 @@ function addRandomFact() {
 // }
 
 function getCommentStats(){
-    fetch("/data").then(response => response.json()).then((comments) => {
-    
-    const statsListElement = document.getElementById('comment-container');
-    statsListElement.innerHTML = '';
-    statsListElement.appendChild(
-        createListElement('AJ: ' + comments.comment1));
-    statsListElement.appendChild(
-        createListElement('Kyle: ' + comments.comment2));
-    statsListElement.appendChild(
-        createListElement('Jorge: ' + comments.comment3));
-    })
+    fetch("/comments").then(response => response.json()).then((comments) => {
+        console.log(comments)
+        const historyEl = document.getElementById('comment-history');
+        comments.forEach((comment) => {
+            historyEl.appendChild(createListElement(comment));
+        });
+    });
 }
 
 /** Creates an <li> element containing text. */

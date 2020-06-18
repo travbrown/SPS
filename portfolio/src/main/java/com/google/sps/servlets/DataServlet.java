@@ -25,56 +25,55 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /** Servlet that returns a random greeting. TODO: modify this file to handle comments data */
-@WebServlet("/data")
+@WebServlet("/comments")
 public final class DataServlet extends HttpServlet {
-    //private ArrayList<String> comments = new ArrayList<String>();
     
-    private ArrayList<String> arr;
+    private ArrayList<String> comments;
     @Override
     public void init(){
-        arr = new ArrayList<>();
-        arr.add("Nice Picss");
-        arr.add("Love the fun facts");
-        arr.add("Woo Go Travis!");
-        
+        comments = new ArrayList<>();
+        comments.add("Nice Pics");
+        comments.add("Love the fun facts");
+        comments.add("Woo Go Travis!");    
     }
 
     @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String thoughts = getParameter(request, "comment_box", "");
+        
+        comments.add(thoughts);
+        
+        // Redirect back to the HTML page.
+        response.sendRedirect("/index.html");
+    }
+    @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         
-        // Convert the server stats to JSON
-        //ServerStats commentStats = new CommentStats();
-        String json = convertToJson(arr);
+        String json = convertToJsonUsingGson(comments);
         response.setContentType("application/json;");
-        System.out.println(json);
         response.getWriter().println(json);
     }
 
     /**
-    * Converts a ServerStats instance into a JSON string using manual String concatentation.
-    */
-    private String convertToJson(ArrayList<String> arr) {
-        String json = "{";
-        json += "\"comment1\": ";
-        json += "\"" + arr.get(0) + "\"";
-        json += ", ";
-        json += "\"comment2\": ";
-        json += "\"" + arr.get(1) + "\"" + ", ";
-        json += "\"comment3\": ";
-        json += "\"" + arr.get(2) + "\"";
-        json += "}";
-        return json;
+   * @return the request parameter, or the default value if the parameter
+   *         was not specified by the client
+   */
+  private String getParameter(HttpServletRequest request, String name, String defaultValue) {
+    String value = request.getParameter(name);
+    if (value == null) {
+      return defaultValue;
     }
-
+    return value;
+  }
 
     /**
     * Converts a ServerStats instance into a JSON string using the Gson library. Note: We first added
     * the Gson library dependency to pom.xml.
     */
-    // private String convertToJsonUsingGson(CommentStats commentStats) {
-    //     Gson gson = new Gson();
-    //     String json = gson.toJson(commentStats);
-    //     return json;
-    // }
+    private String convertToJsonUsingGson(ArrayList<String> comments) {
+        Gson gson = new Gson();
+        String json = gson.toJson(comments);
+        return json;
+    }
 }
 

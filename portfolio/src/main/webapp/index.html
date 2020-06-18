@@ -30,10 +30,6 @@
         <div class="content-container">
             <h1 class="tagline">Adventurer. Creator. Philosopher</h1>
             
-            <p>Click below to be greeted in different ways:</p>
-            <button onclick="getCommentStats()">Greetings</button>
-            <ul id="comment-container"></ul>
-            
             <p class="intro">
                 Hi, I'm Travis.
                 Computer Science Major at Howard University from Portmore, Jamaica. 
@@ -44,8 +40,6 @@
             <p>Click below to get random fun facts about me:</p>
             <button onclick="addRandomFact()">I love my life</button>
             <div id="fact-container"></div>
-
-
 
             <div class="row">
                 <div class="column">
@@ -80,6 +74,15 @@
 
             <iframe width="800" height="600" 
             src="https://www.youtube.com/embed/V6IfQHg52BM"></iframe>
+
+            <form action="/comments" method="POST">
+                <p>Leave a Comment:</p>
+                <textarea id="comment_box" name="comment_box" rows="10" cols="30"></textarea>
+                <input type="submit">
+            </form>
+            
+            <button onclick="getCommentStats()">Click below to see what  others have said</button>
+            <ul id="comment-history"></ul>
 
         </div>
 
