@@ -2,17 +2,139 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+	<title>xprsn</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" type="image/png" href="/images/favicons/favicon.png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script src="script.js"></script>
   </head>
   <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+    <div>
+        <div class="nav"> 
+            <ul class="nav_container">
+                <li>
+                    <p><span class="emoji">💻</span></p>
+                </li>
+                <li>
+                    <p><span class="emoji">📸</span></p>
+                </li>
+                <li>
+                    <p><span class="emoji">🎥</span></p>
+                </li>           
+            </ul>
+        </div>
+        
+        <hr>
+
+        <div class="content-container">
+            <h1 class="tagline">Adventurer. Creator. Philosopher</h1>
+            
+            <p class="intro">
+                Hi, I'm Travis.
+                Computer Science Major at Howard University from Portmore, Jamaica. 
+                I love adventure, sports, all forms of art, philosophy, psychology etc. 
+                I'm a curious, weird and open person.      
+            </p>
+
+            <p>Click below to get random fun facts about me:</p>
+            <button onclick="addRandomFact()">I love my life</button>
+            <div id="fact-container"></div>
+
+            <div class="row">
+                <div class="column">
+                    <img src="/images/portfolio/sunset.jpg">
+                    <img src="/images/portfolio/alaji.jpg">
+                    <img src="/images/portfolio/ari.jpg">
+                    <img src="/images/portfolio/back-back_ashcrys.jpg">
+                    <img src="/images/portfolio/Brit-1.jpg">
+                    <img src="/images/portfolio/Brit-2.jpg">                    
+                </div>
+                <div class="column">
+                    <img src="/images/portfolio/central_light.jpg">
+                    <img src="/images/portfolio/broken_step_light.jpg">
+                    <img src="/images/portfolio/church_cape_coast.jpg">
+                    <img src="/images/portfolio/malik.jpg">
+                    <img src="/images/portfolio/peniel.jpg">
+                    <img src="/images/portfolio/peniel_2.jpg">
+                    <img src="/images/portfolio/ring.jpg">
+                    <img src="/images/portfolio/dockweiler.jpeg">
+                </div>
+                <div class="column">
+                    <img src="/images/portfolio/closeUp_ashcrys.jpg">
+                    <img src="/images/portfolio/tall_sunset.jpg">
+                    <img src="/images/portfolio/taurus.jpg">
+                    <img src="/images/portfolio/youtube.jpg">
+                    <img src="/images/portfolio/moon.jpg">
+                    <img src="/images/portfolio/waves.jpg">
+                    <img src="/images/portfolio/reflective_girl.jpg">
+                    <img src="/images/portfolio/Brit-3.jpg">
+                </div>
+            </div>
+
+            <iframe width="800" height="600" 
+            src="https://www.youtube.com/embed/V6IfQHg52BM"></iframe>
+
+            <form action="/comments" method="POST">
+                <p>Leave a Comment:</p>
+                Name: <input type="text" id="username" name="username"><br>
+                <textarea id="comment_box" name="comment_box" rows="5" cols="30"></textarea>
+                <input type="submit">
+            </form>
+            
+            <button onclick="getCommentStats()">Click below to see what  others have said</button>
+            <ul id="comment-history"></ul>
+
+        </div>
+
+        <footer >
+            <ul class="nav_container">
+                <li><i>
+                    <a href="https://www.linkedin.com/in/xprsn">
+                        <img src="/images/icons/linkedin.png">
+                    </a>
+                    </i>
+                </li>
+                <li>
+                    <i>
+                    <a href="https://github.com/travbrown">
+                        <img src="/images/icons/github.png">
+                    </a>
+                    </i>
+                </li>
+                <li>
+                    <i>
+                    <a href="/images/resume.pdf">
+                        <img src="/images/icons/resume.png">
+                    </a>
+                    </i>
+                </li>            
+            </ul>
+        </footer>
+        
     </div>
-  </body>
+    <!-- 
+    What do I primarily want to do:
+        - Explain xprsn
+        - Talk a lil about me
+        - What I want out of life
+        - Showcase xprsns:
+            - Code 
+            - Photography 
+            - Film (WIP)
+        - Resume
+
+    MoodController:
+        THEMES
+        - Tropical themes for my  gratitude, joy and peace
+            lighter colors of nature
+        - Mystical Sublime dark space theme for my depth
+            darker blues/greys
+        SOUND (Use Wikplayer.com) 
+        - Reggae for joy and gratitude
+        - Drake like music that puts you in a somber mood
+    -->
+  
+
+    </body>
 </html>
