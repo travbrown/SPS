@@ -53,12 +53,41 @@ function addRandomFact() {
 
 function getCommentStats(){
     fetch("/comments").then(response => response.json()).then((comments) => {
-        console.log(comments)
-        const historyEl = document.getElementById('comment-history');
+        const commentHistory = document.getElementById('comment-history');
         comments.forEach((comment) => {
-            historyEl.appendChild(createListElement(comment));
+            console.log(comment)
+            commentHistory.appendChild(createCommentElement(comment));
         });
     });
+}
+
+/** Creates an element that represents a task, including its delete button. */
+function createCommentElement(comment) {
+  const commentElement = document.createElement('li');
+  commentElement.className = 'comment';
+
+  const textElement = document.createElement('span');
+  textElement.innerText = comment.text;
+
+//   const deleteButtonElement = document.createElement('button');
+//   deleteButtonElement.innerText = 'Delete';
+//   deleteButtonElement.addEventListener('click', () => {
+//     deleteTask(comment);
+
+//     // Remove the task from the DOM.
+//     commentElement.remove();
+//   });
+
+  commentElement.appendChild(textElement);
+//   commentElement.appendChild(deleteButtonElement);
+  return commentElement;
+}
+
+/** Tells the server to delete the task. */
+function deleteTask(task) {
+  const params = new URLSearchParams();
+  params.append('id', task.id);
+  fetch('/delete-task', {method: 'POST', body: params});
 }
 
 /** Creates an <li> element containing text. */

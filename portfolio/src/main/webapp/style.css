@@ -30,18 +30,15 @@ i img {
     padding: 10px;
 }
 
-.nav_container{
+.nav_container ~ li {
   text-align:center;
+  list-style-type: none;
+    display: inline-block;
 }
 
 span.emoji {
   font-size: 40px;
   line-height: 1.5;
-}
-
-li {
-    list-style-type: none;
-    display: inline-block
 }
 
 .content-container {
