@@ -45,6 +45,18 @@ function addRandomFact() {
   factContainer.innerText = fact;
 }
 
+function fetchBlobstoreUrlAndShowForm() {
+  fetch('/blobstore-upload-url')
+      .then((response) => {
+        return response.text();
+      })
+      .then((imageUploadUrl) => {
+        const messageForm = document.getElementById('commentForm');
+        messageForm.action = imageUploadUrl;
+        messageForm.classList.remove('hidden');
+      });
+}
+
 // async function getRandomQuoteUsingAsyncAwait() {
 //   const response = await fetch('/data');
 //   const quote = await response.text();
@@ -68,6 +80,11 @@ function createCommentElement(comment) {
 
   const textElement = document.createElement('span');
   textElement.innerText = comment.text;
+    if (comment.imageUrl !== ""){ 
+        const imageElement = document.createElement('img');
+        imageElement.src = comment.imageUrl;
+        commentElement.appendChild(imageElement);
+    }
 
 //   const deleteButtonElement = document.createElement('button');
 //   deleteButtonElement.innerText = 'Delete';
@@ -79,11 +96,13 @@ function createCommentElement(comment) {
 //   });
 
   commentElement.appendChild(textElement);
+  
 //   commentElement.appendChild(deleteButtonElement);
   return commentElement;
 }
 
 /** Tells the server to delete the task. */
+
 function deleteTask(task) {
   const params = new URLSearchParams();
   params.append('id', task.id);
